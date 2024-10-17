@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+   min-height: 100vh;
+   background-color: #000000;
+   color: rgb(0, 0, 0);
+   display: grid;
+   place-items: center;
+   
+}
+section{
+    background: rgb(245, 156, 218);
+     border-radius: 5px;
+     text-align: center;
+     padding: 20px;
+     box-shadow: 0 4px 20px rgb(255, 0, 212);
+}
+p{
+    font-size: 100px;
+}
+
+button{
+    color: black;
+}
