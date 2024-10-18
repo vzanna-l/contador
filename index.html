@@ -7,42 +7,55 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>contador</h1>
-<section>
-    <p>0</p>
-    <button onclick="diminuirAutomatico()">menos</button>
-    <button onclick="aumentarAutomatico()">mais</button>
-    <button onclick="reiniciar()">reiniciar</button>
-</section>
+    <h1 style="color: white; font-size: smalle;">CONTADOR</h1>
+    <section>
+        <p>0</p>
+        <button onclick="iniciarAumentar()">Aumentar</button>
+        <button onclick="iniciarDiminuir()">Diminuir</button>
+        <button onclick="reiniciar()">Reiniciar</button>
+    </section>
     <script>
-        //estado da minha aplicação
-        let numero = 0 
+        // estado da minha aplicação
+        let numero = 0; 
+        let intervalo;
 
-        function aumentar(){
-         numero += 1
-         MostrarNaTela()
-
-        }         
-        
-        function reiniciar(){
-           numero = 0; 
-           MostrarNaTela();
-        }
-        
-        function diminuir(){
-            numero -= 1
-            MostrarNaTela()
-        }
-        function MostrarNaTela(){
-            const p = document.querySelector ("p")
-            p .innerText = numero
+        function aumentar() {
+            numero += 1;
+            mostrarNaTela();
         }
 
-        //Iniciar 
-        MostrarNaTela()
+        function diminuir() {
+            numero -= 1;
+            mostrarNaTela();
+        }
 
-        
+        function iniciarAumentar() {
+            pararContagem(); // Para qualquer contagem existente
+            intervalo = setInterval(aumentar, 1000); // Aumenta a cada 1 segundo
+        }
 
+        function iniciarDiminuir() {
+            pararContagem(); // Para qualquer contagem existente
+            intervalo = setInterval(diminuir, 1000); // Diminui a cada 1 segundo
+        }
+
+        function reiniciar() {
+            numero = 0; 
+            mostrarNaTela();
+            pararContagem();
+        }
+
+        function mostrarNaTela() {
+            const p = document.querySelector("p");
+            p.innerText = numero;
+        }
+
+        function pararContagem() {
+            clearInterval(intervalo);
+        }
+
+        // Iniciar 
+        mostrarNaTela();
     </script>
 </body>
 </html>
