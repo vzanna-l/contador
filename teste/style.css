@@ -1,5 +1,5 @@
 *{
-    margin: 0; g
+    margin: 0; 
     box-sizing: border-box;
 }
 body{
@@ -8,7 +8,8 @@ body{
    color: rgb(0, 0, 0);
    display: grid;
    place-items: center;
-   
+   justify-content: center;
+   margin: 8px;
 }
 section{
     background: rgb(245, 156, 218);
@@ -16,11 +17,11 @@ section{
      text-align: center;
      padding: 20px;
      box-shadow: 0 4px 20px rgb(255, 0, 212);
+     max-width: 80%;
+     width: 500px;
+    
 }
 p{
     font-size: 100px;
 }
 
-button{
-    color: black;
-}
